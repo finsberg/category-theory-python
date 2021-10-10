@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt install -y pandoc
-          python3 -m pip install sphinx sphinx-book-theme
+          python3 -m pip install ".[doc]"
 
       - name: Build docs
         run: |
