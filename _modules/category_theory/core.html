@@ -157,9 +157,9 @@
 
 
 <div class="viewcode-block" id="Monoid"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Monoid">[docs]</a><span class="k">class</span> <span class="nc">Monoid</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generic</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A moniod is a Set S equipped with a binary</span>
-<span class="sd">    operation + : S x S -&gt; S such that the two</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A moniod is a type :math:`a` equipped with a binary</span>
+<span class="sd">    operation :math:`+ : a \times a \rightarrow a` such that the two</span>
 <span class="sd">    following axioms holds:</span>
 
 <span class="sd">    - :math:`x` is associative: :math:`(a + b) + c = a + (b + c)`</span>
@@ -207,6 +207,8 @@
 
 
 <div class="viewcode-block" id="Functor"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Functor">[docs]</a><span class="k">class</span> <span class="nc">Functor</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generic</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
+    <span class="sd">&quot;&quot;&quot;A Functor is a mapping between categories.&quot;&quot;&quot;</span>
+
 <div class="viewcode-block" id="Functor.map"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Functor.map">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Functor[b]&quot;</span><span class="p">:</span>
         <span class="o">...</span></div></div>

@@ -156,7 +156,7 @@
 <span class="n">b</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="List"><a class="viewcode-back" href="../../category_theory.html#category_theory.functor.List">[docs]</a><span class="k">class</span> <span class="nc">List</span><span class="p">(</span><span class="n">Functor</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generic</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
+<div class="viewcode-block" id="List"><a class="viewcode-back" href="../../category_theory.html#category_theory.functor.List">[docs]</a><span class="k">class</span> <span class="nc">List</span><span class="p">(</span><span class="n">Functor</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
@@ -164,7 +164,7 @@
         <span class="k">return</span> <span class="n">List</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)))</span></div></div>
 
 
-<div class="viewcode-block" id="Maybe"><a class="viewcode-back" href="../../category_theory.html#category_theory.functor.Maybe">[docs]</a><span class="k">class</span> <span class="nc">Maybe</span><span class="p">(</span><span class="n">Functor</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generic</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
+<div class="viewcode-block" id="Maybe"><a class="viewcode-back" href="../../category_theory.html#category_theory.functor.Maybe">[docs]</a><span class="k">class</span> <span class="nc">Maybe</span><span class="p">(</span><span class="n">Functor</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
