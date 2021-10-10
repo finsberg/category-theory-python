@@ -8,9 +8,15 @@ This is my attempt to implement some of the common structures from Category theo
 
 Topics to be covered are
 
-- [ ] Moniod (in progress)
-- [ ] Functors
+- [x] Moniods
+- [ ] Functors (in progress)
 - [ ] Applicative Functors
 - [ ] Monads
 
 This list might be more detailed in the future.
+
+My assessment is manly based on the book called [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/) by Bartosz Milewski and the podcast [LambdaCast](https://soundcloud.com/lambda-cast)
+
+
+## Contributing
+This repo is manly for me to learn about these concepts in Category theory. If anyone finds this useful that is great. If you spot any bugs or mistakes I have made I would be grateful if you could file an issue (or even better : first file an issue and then submit a PR).
