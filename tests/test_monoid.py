@@ -7,7 +7,6 @@ from category_theory import monoid
 from category_theory import operations as op
 from category_theory import par_operations as parop
 from hypothesis import given
-from hypothesis import settings
 from hypothesis import strategies as st
 
 
@@ -37,7 +36,10 @@ def test_String_is_associative(a_, b_, c_):
     assert a + (b + c) == (a + b) + c == a + b + c
 
 
-@pytest.mark.parametrize("cls", [monoid.IntPlus, monoid.IntProd, monoid.MaybeIntPlus])
+@pytest.mark.parametrize(
+    "cls",
+    [monoid.IntPlus, monoid.IntProd, monoid.MaybeIntPlus, monoid.MaybeIntProd],
+)
 @given(st.integers())
 def test_integer_Monoid_identity(cls, a_):
     a = cls(a_)
@@ -60,12 +62,48 @@ def test_String_identity(a_):
     assert a + e == e + a == a
 
 
-@pytest.mark.parametrize("cls", [monoid.IntPlus, monoid.MaybeIntPlus])
+@pytest.mark.parametrize("func", [op.fold, op.foldr])
 @given(st.iterables(st.integers()))
-def test_IntPlus_fold(cls, values):
+def test_IntPlus_fold(func, values):
     values, values_copy = itertools.tee(values)
-    value = op.fold((cls(v) for v in values), cls)
-    assert value == cls(sum(values_copy))
+    value = func((monoid.IntPlus(v) for v in values), monoid.IntPlus)
+    assert value == monoid.IntPlus(sum(values_copy))
+
+
+@st.composite
+def maybeint(draw, elements=st.integers()):
+    values = draw(st.lists(elements))
+    index = draw(st.integers(min_value=0, max_value=max(len(values) - 1, 0)))
+    maybe = draw(st.one_of(st.integers(), st.none()))
+    if len(values) > 0:
+        values[index] = maybe
+    return values
+
+
+@pytest.mark.parametrize("func", [op.fold, op.foldr])
+@given(maybeint())
+def test_MaybeIntPlus_fold(func, values):
+    value = func((monoid.MaybeIntPlus(v) for v in values), monoid.MaybeIntPlus)
+    if None in values:
+        true_value = None
+    else:
+        true_value = sum(values)
+    assert value == monoid.MaybeIntPlus(true_value)
+
+
+@pytest.mark.parametrize("func", [op.fold, op.foldr])
+@given(maybeint())
+def test_MaybeIntProd_fold(func, values):
+    value = func((monoid.MaybeIntProd(v) for v in values), monoid.MaybeIntProd)
+    if None in values:
+        true_value = None
+    else:
+        true_value = functools.reduce(
+            operator.mul,
+            values,
+            monoid.MaybeIntProd.e().value,
+        )
+    assert value == monoid.MaybeIntProd(true_value)
 
 
 def test_IntPlus_par():
@@ -78,12 +116,17 @@ def test_IntPlus_par():
     assert value == monoid.IntPlus(sum(values))
 
 
-@pytest.mark.parametrize("cls", [monoid.IntProd, monoid.MaybeIntProd])
+@pytest.mark.parametrize(
+    "func",
+    (op.fold, op.foldr),
+)
 @given(st.iterables(st.integers()))
-def test_IntProd_fold(cls, values):
+def test_IntProd_fold(func, values):
     values, values_copy = itertools.tee(values)
-    value = op.fold((cls(v) for v in values), cls)
-    assert value == cls(functools.reduce(operator.mul, values_copy, cls.e().value))
+    value = func((monoid.IntProd(v) for v in values), monoid.IntProd)
+    assert value == monoid.IntProd(
+        functools.reduce(operator.mul, values_copy, monoid.IntProd.e().value),
+    )
 
 
 def test_MaybeIntPlus():
@@ -107,20 +150,26 @@ def test_Any_fold(values):
 
 
 @pytest.mark.parametrize(
-    "cls, func",
-    itertools.product((monoid.String,), (op.fold, op.foldr)),
+    "func",
+    (op.fold, op.foldr),
 )
 @given(st.iterables(st.text()))
-def test_String_fold(cls, func, values):
+def test_String_fold(func, values):
     values, values_copy = itertools.tee(values)
-    value = func((cls(v) for v in values), cls)
-    assert value == cls("".join(values_copy))
+    value = func((monoid.String(v) for v in values), monoid.String)
+    assert value == monoid.String("".join(values_copy))
 
 
-@given(st.lists(st.text()), st.integers(min_value=1))
-@settings(max_examples=100)
-def test_String_par_fold(values, chunk_size):
-    chunk_size = max(min(chunk_size, len(values)), 1)
+@st.composite
+def string_chunk_size(draw, elements=st.text()):
+    values = draw(st.lists(elements))
+    chunk_size = draw(st.integers(min_value=1, max_value=max(len(values), 1)))
+    return (values, chunk_size)
+
+
+@given(string_chunk_size())
+def test_String_par_fold(data):
+    values, chunk_size = data
     value = parop.fold(
         (monoid.String(v) for v in values),
         monoid.String,
