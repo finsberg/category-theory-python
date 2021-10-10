@@ -14,14 +14,14 @@ class String(Monoid):
         self.value = value
 
     @staticmethod
-    def e() -> str:
-        return ""
+    def e() -> "String":
+        return String("")
 
-    def __add__(self, other: str) -> str:
-        return self.value + other
+    def __add__(self, other: "String") -> "String":
+        return String(self.value + other.value)
 
-    def __radd__(self, other: str) -> str:
-        return other + self.value
+    def __radd__(self, other: "String") -> "String":
+        return String(other.value + self.value)
 
 
 class IntPlus(CommutativeMonoid):
@@ -34,11 +34,11 @@ class IntPlus(CommutativeMonoid):
         self.value = value
 
     @staticmethod
-    def e() -> int:
-        return 0
+    def e() -> "IntPlus":
+        return IntPlus(0)
 
-    def __add__(self, other: int) -> int:
-        return self.value + other
+    def __add__(self, other: "IntPlus") -> "IntPlus":
+        return IntPlus(self.value + other.value)
 
 
 class IntProd(CommutativeMonoid):
@@ -51,11 +51,11 @@ class IntProd(CommutativeMonoid):
         self.value = value
 
     @staticmethod
-    def e() -> int:
-        return 1
+    def e() -> "IntProd":
+        return IntProd(1)
 
-    def __add__(self, other: int) -> int:
-        return self.value * other
+    def __add__(self, other: "IntProd") -> "IntProd":
+        return IntProd(self.value * other.value)
 
 
 class MaybeIntPlus(CommutativeMonoid):

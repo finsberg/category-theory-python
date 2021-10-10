@@ -6,7 +6,7 @@ a = typing.TypeVar("a")
 b = typing.TypeVar("b")
 
 
-class Monoid(ABC):
+class Monoid(ABC, typing.Generic[a]):
     """
     A moniod is a Set S equipped with a binary
     operation + : S x S -> S such that the two
@@ -23,6 +23,14 @@ class Monoid(ABC):
     a `staticmethod` called `e`.
 
     """
+
+    def __init__(self, value: a) -> None:
+        self.value = value
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Monoid):
+            raise NotImplementedError
+        return self.value == other.value
 
     @staticmethod
     @abstractmethod
