@@ -7,8 +7,40 @@ import dask
 from .core import Monoid
 
 
-def chunkify(chunk_size, iterable, fillvalue=None):
+def chunkify(
+    chunk_size: int,
+    iterable: typing.Iterable[typing.Any],
+    fillvalue: typing.Any = None,
+) -> typing.Iterable[typing.Iterable[typing.Any]]:
+    """Split iterable into chunks of size `chunk_size`.
+    If all chunks does not add up, it will use the
+    `fillvalue` in the remainin spots
 
+    Parameters
+    ----------
+    chunk_size : int
+        Number of elements in each chunk
+    iterable : typing.Iterable[typing.Any]
+        The iterable that should be chunkified
+    fillvalue : typing.Any, optional
+        A value to put in those places when the
+        chunk size does not add up, by default None
+
+    Returns
+    -------
+    typing.Iterable[typing.Iterable[typing.Any]]
+        A list of new iterables, each being of size `chunk_size`.
+
+    Example
+    -------
+
+    .. code:: python
+
+        >> iterable = (1, 2, 3, 4, 5)
+        >> chunkify(3, iterable, fillvalue=None)
+        ((1, 2, 3), (4, 5, None))
+
+    """
     args = [iter(iterable)] * chunk_size
     return zip_longest(fillvalue=fillvalue, *args)
 
