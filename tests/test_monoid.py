@@ -18,7 +18,7 @@ def test_IntPlus_par():
     value = par_fold(
         (monoid.IntPlus(v) for v in values),
         monoid.IntPlus,
-        chunk_size=100,
+        chunk_size=99,
     ).compute()
     assert value == sum(values)
 
