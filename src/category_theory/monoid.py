@@ -1,19 +1,22 @@
-"""
-A moniod is a Set S equipped with a binary operation + : S x S -> S
-such that the two following axioms holds
-
-1) + is associative: (a + b) + c = a + (b + c)
-2) There exists an identiry element e, such that a + e = e + a = a
-"""
-import functools
 import typing
 
 from .core import CommutativeMonoid
 from .core import Monoid
 
 
-def squash(lst: typing.Iterable["Monoid"], cls: typing.Type):
-    return functools.reduce(lambda x, y: x + y, lst, cls.e())
+class String(Monoid):
+    def __init__(self, value: str) -> None:
+        self.value = value
+
+    @staticmethod
+    def e() -> str:
+        return ""
+
+    def __add__(self, other: str) -> str:
+        return self.value + other
+
+    def __radd__(self, other: str) -> str:
+        return other + self.value
 
 
 class IntPlus(CommutativeMonoid):
