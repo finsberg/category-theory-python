@@ -6,7 +6,7 @@ a = typing.TypeVar("a")
 b = typing.TypeVar("b")
 
 
-class List(Functor, typing.Generic[a]):
+class List(Functor[a]):
     def __init__(self, value: typing.List[a]) -> None:
         self.value = value
 
@@ -14,7 +14,7 @@ class List(Functor, typing.Generic[a]):
         return List(list(map(func, self.value)))
 
 
-class Maybe(Functor, typing.Generic[a]):
+class Maybe(Functor[a]):
     def __init__(self, value: typing.Optional[a]) -> None:
         self.value = value
 
