@@ -25,7 +25,7 @@ class Monoid(ABC, typing.Generic[a]):
     """
 
     def __init__(self, value: a) -> None:
-        self.value = value
+        self.value = value  # pragma: no cover
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Monoid):
@@ -46,7 +46,7 @@ class Monoid(ABC, typing.Generic[a]):
         ...
 
 
-class CommutativeMonoid(Monoid):
+class CommutativeMonoid(Monoid[a]):
     """A CommutativeMonoid is just a Monoid
     where the binary operation is commutative,
     i.e :math:`a + b = b + a`
