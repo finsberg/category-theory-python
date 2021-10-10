@@ -7,41 +7,21 @@ such that the two following axioms holds
 """
 import functools
 import typing
-from abc import ABC
-from abc import abstractmethod
-from abc import abstractstaticmethod
 
-
-class Monoid(ABC):
-    @staticmethod
-    @abstractstaticmethod
-    def e():
-        pass
-
-    @abstractmethod
-    def __radd__(self, other: typing.Any):
-        pass
-
-    @abstractmethod
-    def __add__(self, other: typing.Any):
-        pass
+from .core import CommutativeMonoid
+from .core import Monoid
 
 
 def squash(lst: typing.Iterable["Monoid"], cls: typing.Type):
     return functools.reduce(lambda x, y: x + y, lst, cls.e())
 
 
-class CommutativeMonoid(Monoid):
-    def __radd__(self, other: typing.Any) -> typing.Any:
-        return self.__add__(other)
-
-
 class IntPlus(CommutativeMonoid):
-    def __init__(self, value: int):
+    def __init__(self, value: int) -> None:
         self.value = value
 
     @staticmethod
-    def e():
+    def e() -> int:
         return 0
 
     def __add__(self, other: int) -> int:
@@ -49,12 +29,28 @@ class IntPlus(CommutativeMonoid):
 
 
 class IntProd(CommutativeMonoid):
-    def __init__(self, value: int):
+    def __init__(self, value: int) -> None:
         self.value = value
 
     @staticmethod
-    def e():
+    def e() -> int:
         return 1
 
     def __add__(self, other: int) -> int:
         return self.value * other
+
+
+class MaybeIntPlus(CommutativeMonoid):
+    def __init__(self, value: typing.Optional[int]):
+        self.value = value
+
+    @staticmethod
+    def e() -> "MaybeIntPlus":
+        return MaybeIntPlus(0)
+
+    def __add__(self, other: "MaybeIntPlus") -> "MaybeIntPlus":
+        if self.value is None:
+            return MaybeIntPlus(None)
+        if other.value is None:
+            return MaybeIntPlus(None)
+        return MaybeIntPlus(self.value + other.value)
