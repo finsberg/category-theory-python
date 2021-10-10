@@ -1,5 +1,6 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/finsberg/category-theory-python/master.svg)](https://results.pre-commit.ci/latest/github/finsberg/category-theory-python/master)
 [![CI](https://github.com/finsberg/category-theory-python/actions/workflows/main.yml/badge.svg)](https://github.com/finsberg/category-theory-python/actions/workflows/main.yml)
+[![github pages](https://github.com/finsberg/category-theory-python/actions/workflows/github-pages.yml/badge.svg)](https://github.com/finsberg/category-theory-python/actions/workflows/github-pages.yml)
 
 # Category Theory for python programmers
 

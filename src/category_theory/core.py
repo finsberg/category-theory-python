@@ -2,6 +2,9 @@ import typing
 from abc import ABC
 from abc import abstractmethod
 
+a = typing.TypeVar("a")
+b = typing.TypeVar("b")
+
 
 class Monoid(ABC):
     """
@@ -43,3 +46,9 @@ class CommutativeMonoid(Monoid):
 
     def __radd__(self, other: typing.Any) -> typing.Any:
         return self.__add__(other)
+
+
+class Functor(ABC, typing.Generic[a]):
+    @abstractmethod
+    def map(self, func: typing.Callable[[a], b]) -> "Functor[b]":
+        ...
