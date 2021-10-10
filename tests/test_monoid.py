@@ -7,6 +7,7 @@ from category_theory import monoid
 from category_theory import operations as op
 from category_theory import par_operations as parop
 from hypothesis import given
+from hypothesis import settings
 from hypothesis import strategies as st
 
 
@@ -70,11 +71,13 @@ def test_String_fold(cls, func, values):
     assert value == cls("".join(values_copy))
 
 
-def test_String_par_fold():
-    values = ["H", "e", "l", "l", "o"] * 100
+@given(st.lists(st.text()), st.integers(min_value=1))
+@settings(max_examples=100)
+def test_String_par_fold(values, chunk_size):
+    chunk_size = max(min(chunk_size, len(values)), 1)
     value = parop.fold(
         (monoid.String(v) for v in values),
         monoid.String,
-        chunk_size=99,
+        chunk_size=chunk_size,
     ).compute()
     assert value == monoid.String("".join(values))
