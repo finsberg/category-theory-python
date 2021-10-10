@@ -87,3 +87,21 @@ class MaybeIntProd(CommutativeMonoid[typing.Optional[int]]):
         if other.value is None:
             return MaybeIntProd(None)
         return MaybeIntProd(self.value * other.value)
+
+
+class Any(CommutativeMonoid[bool]):
+    @staticmethod
+    def e() -> "Any":
+        return Any(False)
+
+    def __add__(self, other: "Any") -> "Any":
+        return Any(self.value or other.value)
+
+
+class All(CommutativeMonoid[bool]):
+    @staticmethod
+    def e() -> "All":
+        return All(True)
+
+    def __add__(self, other: "All") -> "All":
+        return All(self.value and other.value)

@@ -7,9 +7,9 @@ b = typing.TypeVar("b")
 
 
 class Monoid(ABC, typing.Generic[a]):
-    """
-    A moniod is a Set S equipped with a binary
-    operation + : S x S -> S such that the two
+    r"""
+    A moniod is a type :math:`a` equipped with a binary
+    operation :math:`+ : a \times a \rightarrow a` such that the two
     following axioms holds:
 
     - :math:`x` is associative: :math:`(a + b) + c = a + (b + c)`
@@ -57,6 +57,8 @@ class CommutativeMonoid(Monoid[a]):
 
 
 class Functor(ABC, typing.Generic[a]):
+    """A Functor is a mapping between categories."""
+
     @abstractmethod
     def map(self, func: typing.Callable[[a], b]) -> "Functor[b]":
         ...
