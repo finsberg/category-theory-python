@@ -154,14 +154,11 @@
 <span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">Monoid</span>
 
 
-<div class="viewcode-block" id="String"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.String">[docs]</a><span class="k">class</span> <span class="nc">String</span><span class="p">(</span><span class="n">Monoid</span><span class="p">):</span>
+<div class="viewcode-block" id="String"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.String">[docs]</a><span class="k">class</span> <span class="nc">String</span><span class="p">(</span><span class="n">Monoid</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;Monoid whose values are strings.</span>
 <span class="sd">    Binary operation is string concatenation</span>
 <span class="sd">    and identity element being the empty string</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="String.e"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.String.e">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">e</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;String&quot;</span><span class="p">:</span>
@@ -174,14 +171,11 @@
         <span class="k">return</span> <span class="n">String</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="IntPlus"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.IntPlus">[docs]</a><span class="k">class</span> <span class="nc">IntPlus</span><span class="p">(</span><span class="n">CommutativeMonoid</span><span class="p">):</span>
+<div class="viewcode-block" id="IntPlus"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.IntPlus">[docs]</a><span class="k">class</span> <span class="nc">IntPlus</span><span class="p">(</span><span class="n">CommutativeMonoid</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;Monoid whose values are integers.</span>
 <span class="sd">    Binary operation is the plus operation</span>
 <span class="sd">    and identity element is 0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="IntPlus.e"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.IntPlus.e">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">e</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;IntPlus&quot;</span><span class="p">:</span>
@@ -191,14 +185,11 @@
         <span class="k">return</span> <span class="n">IntPlus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="IntProd"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.IntProd">[docs]</a><span class="k">class</span> <span class="nc">IntProd</span><span class="p">(</span><span class="n">CommutativeMonoid</span><span class="p">):</span>
+<div class="viewcode-block" id="IntProd"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.IntProd">[docs]</a><span class="k">class</span> <span class="nc">IntProd</span><span class="p">(</span><span class="n">CommutativeMonoid</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;Monoid whose values are integers.</span>
 <span class="sd">    Binary operation is the multiplication operation</span>
 <span class="sd">    and identity element is 1</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="IntProd.e"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.IntProd.e">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">e</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;IntProd&quot;</span><span class="p">:</span>
@@ -208,16 +199,13 @@
         <span class="k">return</span> <span class="n">IntProd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="MaybeIntPlus"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.MaybeIntPlus">[docs]</a><span class="k">class</span> <span class="nc">MaybeIntPlus</span><span class="p">(</span><span class="n">CommutativeMonoid</span><span class="p">):</span>
+<div class="viewcode-block" id="MaybeIntPlus"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.MaybeIntPlus">[docs]</a><span class="k">class</span> <span class="nc">MaybeIntPlus</span><span class="p">(</span><span class="n">CommutativeMonoid</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]]):</span>
     <span class="sd">&quot;&quot;&quot;Monoid whose values are mayby integers.</span>
 <span class="sd">    This means that the value can be int or None.</span>
 <span class="sd">    Binary operation is the plus operation is the</span>
 <span class="sd">    value is of type int and returns None otherwise.</span>
 <span class="sd">    Identity element is MaybeIntPlus(0)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="MaybeIntPlus.e"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.MaybeIntPlus.e">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">e</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;MaybeIntPlus&quot;</span><span class="p">:</span>
@@ -229,6 +217,26 @@
         <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">MaybeIntPlus</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">MaybeIntPlus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MaybeIntProd"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.MaybeIntProd">[docs]</a><span class="k">class</span> <span class="nc">MaybeIntProd</span><span class="p">(</span><span class="n">CommutativeMonoid</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]]):</span>
+    <span class="sd">&quot;&quot;&quot;Monoid whose values are mayby integers.</span>
+<span class="sd">    This means that the value can be int or None.</span>
+<span class="sd">    Binary operation is the multiplication operation is the</span>
+<span class="sd">    value is of type int and returns None otherwise.</span>
+<span class="sd">    Identity element is MaybeIntProd(1)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MaybeIntProd.e"><a class="viewcode-back" href="../../category_theory.html#category_theory.monoid.MaybeIntProd.e">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">e</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;MaybeIntProd&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">MaybeIntProd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;MaybeIntProd&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MaybeIntProd&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">MaybeIntProd</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">MaybeIntProd</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">MaybeIntProd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 </pre></div>
 
               </div>

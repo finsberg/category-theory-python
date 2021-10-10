@@ -175,7 +175,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>  <span class="c1"># pragma: no cover</span>
 
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Monoid</span><span class="p">):</span>
@@ -196,7 +196,7 @@
         <span class="o">...</span></div>
 
 
-<div class="viewcode-block" id="CommutativeMonoid"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.CommutativeMonoid">[docs]</a><span class="k">class</span> <span class="nc">CommutativeMonoid</span><span class="p">(</span><span class="n">Monoid</span><span class="p">):</span>
+<div class="viewcode-block" id="CommutativeMonoid"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.CommutativeMonoid">[docs]</a><span class="k">class</span> <span class="nc">CommutativeMonoid</span><span class="p">(</span><span class="n">Monoid</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;A CommutativeMonoid is just a Monoid</span>
 <span class="sd">    where the binary operation is commutative,</span>
 <span class="sd">    i.e :math:`a + b = b + a`</span>
