@@ -12,6 +12,14 @@ category\_theory.core module
    :undoc-members:
    :show-inheritance:
 
+category\_theory.functor module
+-------------------------------
+
+.. automodule:: category_theory.functor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 category\_theory.monoid module
 ------------------------------
 

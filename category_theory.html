@@ -175,6 +175,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-category_theory.functor">
+   category_theory.functor module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-category_theory.monoid">
    category_theory.monoid module
   </a>
@@ -222,6 +227,17 @@ i.e <span class="math notranslate nohighlight">\(a + b = b + a\)</span></p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="category_theory.core.Functor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.core.</span></span><span class="sig-name descname"><span class="pre">Functor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/core.html#Functor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Functor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">category_theory.core.a</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="category_theory.core.Functor.map">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.core.a</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">category_theory.core.b</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.core.Functor" title="category_theory.core.Functor"><span class="pre">category_theory.core.Functor</span></a><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.core.b</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/core.html#Functor.map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Functor.map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="category_theory.core.Monoid">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.core.</span></span><span class="sig-name descname"><span class="pre">Monoid</span></span><a class="reference internal" href="_modules/category_theory/core.html#Monoid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Monoid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
@@ -240,6 +256,31 @@ a <cite>staticmethod</cite> called <cite>e</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.core.Monoid.e">
 <em class="property"><span class="pre">abstract</span> <span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/core.html#Monoid.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Monoid.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-category_theory.functor">
+<span id="category-theory-functor-module"></span><h2>category_theory.functor module<a class="headerlink" href="#module-category_theory.functor" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="category_theory.functor.List">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.functor.</span></span><span class="sig-name descname"><span class="pre">List</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#category_theory.functor.List" title="category_theory.functor.List"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.a</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/functor.html#List"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.functor.List" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#category_theory.core.Functor" title="category_theory.core.Functor"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.Functor</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">category_theory.functor.a</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="category_theory.functor.List.map">
+<span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.a</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">category_theory.functor.b</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.functor.List" title="category_theory.functor.List"><span class="pre">category_theory.functor.List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.b</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/functor.html#List.map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.functor.List.map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="category_theory.functor.Maybe">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.functor.</span></span><span class="sig-name descname"><span class="pre">Maybe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.a</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/functor.html#Maybe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.functor.Maybe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#category_theory.core.Functor" title="category_theory.core.Functor"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.Functor</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">category_theory.functor.a</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="category_theory.functor.Maybe.map">
+<span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.a</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">category_theory.functor.b</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.functor.Maybe" title="category_theory.functor.Maybe"><span class="pre">category_theory.functor.Maybe</span></a><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.b</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/functor.html#Maybe.map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.functor.Maybe.map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
