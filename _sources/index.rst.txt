@@ -1,0 +1,23 @@
+.. Category Theory for Python programmers documentation master file, created by
+   sphinx-quickstart on Sun Oct 10 12:47:37 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Category Theory for Python programmers's documentation!
+==================================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   category_theory
+   modules
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

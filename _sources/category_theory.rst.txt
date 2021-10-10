@@ -1,0 +1,37 @@
+category\_theory package
+========================
+
+Submodules
+----------
+
+category\_theory.core module
+----------------------------
+
+.. automodule:: category_theory.core
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+category\_theory.monoid module
+------------------------------
+
+.. automodule:: category_theory.monoid
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+category\_theory.operations module
+----------------------------------
+
+.. automodule:: category_theory.operations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: category_theory
+   :members:
+   :undoc-members:
+   :show-inheritance:
