@@ -28,6 +28,14 @@ category\_theory.operations module
    :undoc-members:
    :show-inheritance:
 
+category\_theory.par\_operations module
+---------------------------------------
+
+.. automodule:: category_theory.par_operations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

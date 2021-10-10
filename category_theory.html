@@ -32,6 +32,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="category_theory" href="modules.html" />
@@ -169,22 +170,27 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#category-theory-core-module">
+  <a class="reference internal nav-link" href="#module-category_theory.core">
    category_theory.core module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#category-theory-monoid-module">
+  <a class="reference internal nav-link" href="#module-category_theory.monoid">
    category_theory.monoid module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#category-theory-operations-module">
+  <a class="reference internal nav-link" href="#module-category_theory.operations">
    category_theory.operations module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-contents">
+  <a class="reference internal nav-link" href="#module-category_theory.par_operations">
+   category_theory.par_operations module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-category_theory">
    Module contents
   </a>
  </li>
@@ -204,17 +210,239 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="category-theory-core-module">
-<h2>category_theory.core module<a class="headerlink" href="#category-theory-core-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-category_theory.core">
+<span id="category-theory-core-module"></span><h2>category_theory.core module<a class="headerlink" href="#module-category_theory.core" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="category_theory.core.CommutativeMonoid">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.core.</span></span><span class="sig-name descname"><span class="pre">CommutativeMonoid</span></span><a class="reference internal" href="_modules/category_theory/core.html#CommutativeMonoid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.CommutativeMonoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.Monoid</span></code></a></p>
+<p>A CommutativeMonoid is just a Monoid
+where the binary operation is commutative,
+i.e <span class="math notranslate nohighlight">\(a + b = b + a\)</span></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="category_theory.core.Monoid">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.core.</span></span><span class="sig-name descname"><span class="pre">Monoid</span></span><a class="reference internal" href="_modules/category_theory/core.html#Monoid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Monoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>A moniod is a Set S equipped with a binary
+operation + : S x S -&gt; S such that the two
+following axioms holds:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is associative: <span class="math notranslate nohighlight">\((a + b) + c = a + (b + c)\)</span></p></li>
+<li><p>There exists an identity element <span class="math notranslate nohighlight">\(e\)</span>,
+such that <cite>a + e = e + a = a</cite></p></li>
+</ul>
+<p>In this interface the binary operation used is <cite>+</cite>, so that
+any class that wants inherit from <cite>Monoid</cite> need to implement
+<cite>__add__</cite> and <cite>__radd__</cite>. For the identity element we require
+a <cite>staticmethod</cite> called <cite>e</cite>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="category_theory.core.Monoid.e">
+<em class="property"><span class="pre">abstract</span> <span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/core.html#Monoid.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Monoid.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="category-theory-monoid-module">
-<h2>category_theory.monoid module<a class="headerlink" href="#category-theory-monoid-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-category_theory.monoid">
+<span id="category-theory-monoid-module"></span><h2>category_theory.monoid module<a class="headerlink" href="#module-category_theory.monoid" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="category_theory.monoid.IntPlus">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.monoid.</span></span><span class="sig-name descname"><span class="pre">IntPlus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/monoid.html#IntPlus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.IntPlus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#category_theory.core.CommutativeMonoid" title="category_theory.core.CommutativeMonoid"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.CommutativeMonoid</span></code></a></p>
+<p>Monoid whose values are integers.
+Binary operation is the plus operation
+and identity element is 0</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="category_theory.monoid.IntPlus.e">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#IntPlus.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.IntPlus.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="category_theory.monoid.IntProd">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.monoid.</span></span><span class="sig-name descname"><span class="pre">IntProd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/monoid.html#IntProd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.IntProd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#category_theory.core.CommutativeMonoid" title="category_theory.core.CommutativeMonoid"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.CommutativeMonoid</span></code></a></p>
+<p>Monoid whose values are integers.
+Binary operation is the multiplication operation
+and identity element is 1</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="category_theory.monoid.IntProd.e">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#IntProd.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.IntProd.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="category_theory.monoid.MaybeIntPlus">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.monoid.</span></span><span class="sig-name descname"><span class="pre">MaybeIntPlus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/monoid.html#MaybeIntPlus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.MaybeIntPlus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#category_theory.core.CommutativeMonoid" title="category_theory.core.CommutativeMonoid"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.CommutativeMonoid</span></code></a></p>
+<p>Monoid whose values are mayby integers.
+This means that the value can be int or None.
+Binary operation is the plus operation is the
+value is of type int and returns None otherwise.
+Identity element is MaybeIntPlus(0)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="category_theory.monoid.MaybeIntPlus.e">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.monoid.MaybeIntPlus" title="category_theory.monoid.MaybeIntPlus"><span class="pre">category_theory.monoid.MaybeIntPlus</span></a></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#MaybeIntPlus.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.MaybeIntPlus.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="category_theory.monoid.String">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.monoid.</span></span><span class="sig-name descname"><span class="pre">String</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/monoid.html#String"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.String" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.Monoid</span></code></a></p>
+<p>Monoid whose values are strings.
+Binary operation is string concatenation
+and identity element being the empty string</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="category_theory.monoid.String.e">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#String.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.String.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="category-theory-operations-module">
-<h2>category_theory.operations module<a class="headerlink" href="#category-theory-operations-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-category_theory.operations">
+<span id="category-theory-operations-module"></span><h2>category_theory.operations module<a class="headerlink" href="#module-category_theory.operations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="category_theory.operations.fold">
+<span class="sig-prename descclassname"><span class="pre">category_theory.operations.</span></span><span class="sig-name descname"><span class="pre">fold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><span class="pre">category_theory.core.Monoid</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Type</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/operations.html#fold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.operations.fold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fold an iterable of Monoids together using the identity
+element as initial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lst</strong> (<em>typing.Iterable</em><em>[</em><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><em>Monoid</em></a><em>]</em>) – An iterable of monoids that should be squashed</p></li>
+<li><p><strong>cls</strong> (<em>typing.Type</em>) – The type of the monoid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The reduction of the iterable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>typing.Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="category_theory.operations.foldr">
+<span class="sig-prename descclassname"><span class="pre">category_theory.operations.</span></span><span class="sig-name descname"><span class="pre">foldr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><span class="pre">category_theory.core.Monoid</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Type</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/operations.html#foldr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.operations.foldr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <cite>fold</cite>, but from the right</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lst</strong> (<em>typing.Iterable</em><em>[</em><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><em>Monoid</em></a><em>]</em>) – An iterable of monoids that should be squashed</p></li>
+<li><p><strong>cls</strong> (<em>typing.Type</em>) – The type of the monoid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The reduction of the iterable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>typing.Any</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-category_theory.par_operations">
+<span id="category-theory-par-operations-module"></span><h2>category_theory.par_operations module<a class="headerlink" href="#module-category_theory.par_operations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="category_theory.par_operations.chunkify">
+<span class="sig-prename descclassname"><span class="pre">category_theory.par_operations.</span></span><span class="sig-name descname"><span class="pre">chunkify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillvalue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/par_operations.html#chunkify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.par_operations.chunkify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="category_theory.par_operations.fold">
+<span class="sig-prename descclassname"><span class="pre">category_theory.par_operations.</span></span><span class="sig-name descname"><span class="pre">fold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><span class="pre">category_theory.core.Monoid</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/par_operations.html#fold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.par_operations.fold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fold an iterable of Monoids together using the identity
+element as initial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterable</strong> (<em>typing.Iterable</em><em>[</em><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><em>Monoid</em></a><em>]</em>) – An iterable of monoids that should be squashed</p></li>
+<li><p><strong>cls</strong> (<em>typing.Type</em>) – The type of the monoid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The reduction of the iterable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>typing.Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-category_theory">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-category_theory" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="category_theory.fold">
+<span class="sig-prename descclassname"><span class="pre">category_theory.</span></span><span class="sig-name descname"><span class="pre">fold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><span class="pre">category_theory.core.Monoid</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Type</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/operations.html#fold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.fold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fold an iterable of Monoids together using the identity
+element as initial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lst</strong> (<em>typing.Iterable</em><em>[</em><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><em>Monoid</em></a><em>]</em>) – An iterable of monoids that should be squashed</p></li>
+<li><p><strong>cls</strong> (<em>typing.Type</em>) – The type of the monoid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The reduction of the iterable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>typing.Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="category_theory.foldr">
+<span class="sig-prename descclassname"><span class="pre">category_theory.</span></span><span class="sig-name descname"><span class="pre">foldr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><span class="pre">category_theory.core.Monoid</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Type</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/operations.html#foldr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.foldr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <cite>fold</cite>, but from the right</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lst</strong> (<em>typing.Iterable</em><em>[</em><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><em>Monoid</em></a><em>]</em>) – An iterable of monoids that should be squashed</p></li>
+<li><p><strong>cls</strong> (<em>typing.Type</em>) – The type of the monoid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The reduction of the iterable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>typing.Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="category_theory.par_fold">
+<span class="sig-prename descclassname"><span class="pre">category_theory.</span></span><span class="sig-name descname"><span class="pre">par_fold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><span class="pre">category_theory.core.Monoid</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#category_theory.par_fold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fold an iterable of Monoids together using the identity
+element as initial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterable</strong> (<em>typing.Iterable</em><em>[</em><a class="reference internal" href="#category_theory.core.Monoid" title="category_theory.core.Monoid"><em>Monoid</em></a><em>]</em>) – An iterable of monoids that should be squashed</p></li>
+<li><p><strong>cls</strong> (<em>typing.Type</em>) – The type of the monoid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The reduction of the iterable.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>typing.Any</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </div>
 
