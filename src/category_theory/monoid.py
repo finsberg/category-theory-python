@@ -5,6 +5,11 @@ from .core import Monoid
 
 
 class String(Monoid):
+    """Monoid whose values are strings.
+    Binary operation is string concatenation
+    and identity element being the empty string
+    """
+
     def __init__(self, value: str) -> None:
         self.value = value
 
@@ -20,6 +25,11 @@ class String(Monoid):
 
 
 class IntPlus(CommutativeMonoid):
+    """Monoid whose values are integers.
+    Binary operation is the plus operation
+    and identity element is 0
+    """
+
     def __init__(self, value: int) -> None:
         self.value = value
 
@@ -32,6 +42,11 @@ class IntPlus(CommutativeMonoid):
 
 
 class IntProd(CommutativeMonoid):
+    """Monoid whose values are integers.
+    Binary operation is the multiplication operation
+    and identity element is 1
+    """
+
     def __init__(self, value: int) -> None:
         self.value = value
 
@@ -44,6 +59,13 @@ class IntProd(CommutativeMonoid):
 
 
 class MaybeIntPlus(CommutativeMonoid):
+    """Monoid whose values are mayby integers.
+    This means that the value can be int or None.
+    Binary operation is the plus operation is the
+    value is of type int and returns None otherwise.
+    Identity element is MaybeIntPlus(0)
+    """
+
     def __init__(self, value: typing.Optional[int]):
         self.value = value
 

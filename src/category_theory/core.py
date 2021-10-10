@@ -1,7 +1,6 @@
 import typing
 from abc import ABC
 from abc import abstractmethod
-from abc import abstractstaticmethod
 
 
 class Monoid(ABC):
@@ -10,20 +9,21 @@ class Monoid(ABC):
     operation + : S x S -> S such that the two
     following axioms holds:
 
-    - 1) :math:`x` is associative: :math:`(a + b) + c = a + (b + c)`
+    - :math:`x` is associative: :math:`(a + b) + c = a + (b + c)`
 
-    - 2) There exists an identity element :math:`e`,
-    such that `a + e = e + a = a`
+    - There exists an identity element :math:`e`,
+      such that `a + e = e + a = a`
 
     In this interface the binary operation used is `+`, so that
     any class that wants inherit from `Monoid` need to implement
     `__add__` and `__radd__`. For the identity element we require
     a `staticmethod` called `e`.
+
     """
 
     @staticmethod
-    @abstractstaticmethod
-    def e():
+    @abstractmethod
+    def e() -> typing.Any:
         ...
 
     @abstractmethod

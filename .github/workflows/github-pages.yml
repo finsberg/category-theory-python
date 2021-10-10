@@ -1,0 +1,39 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Upgrade pip
+        run: |
+          python3 -m pip install --upgrade pip
+
+      - name: Install dependencies
+        run: |
+          sudo apt install -y pandoc
+          python3 -m pip install sphinx sphinx-book-theme
+
+      - name: Build docs
+        run: |
+          rm -f docs/source/category_theory.rst
+          rm -f docs/source/modules.rst
+          sphinx-apidoc -o docs/source src/category_theory
+          cd docs && make clean && make html
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build/html
