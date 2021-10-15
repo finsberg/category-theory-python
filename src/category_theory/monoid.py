@@ -17,9 +17,6 @@ class String(Monoid[str]):
     def __add__(self, other: "String") -> "String":
         return String(self.value + other.value)
 
-    def __radd__(self, other: "String") -> "String":
-        return String(other.value + self.value)
-
 
 class IntPlus(CommutativeMonoid[int]):
     """Monoid whose values are integers.

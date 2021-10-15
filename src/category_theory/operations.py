@@ -8,10 +8,6 @@ b = typing.TypeVar("b")
 c = typing.TypeVar("c")
 
 
-def fmap():
-    pass
-
-
 def compose(
     g: typing.Callable[[b], c],
     f: typing.Callable[[a], b],

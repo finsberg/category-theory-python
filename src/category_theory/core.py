@@ -45,10 +45,6 @@ class Monoid(ABC, typing.Generic[a], Atomic):
         ...
 
     @abstractmethod
-    def __radd__(self, other: typing.Any):
-        ...
-
-    @abstractmethod
     def __add__(self, other: typing.Any):
         ...
 
@@ -59,8 +55,7 @@ class CommutativeMonoid(Monoid[a]):
     i.e :math:`a + b = b + a`
     """
 
-    def __radd__(self, other: typing.Any) -> typing.Any:
-        return self.__add__(other)
+    pass
 
 
 class Functor(ABC, typing.Generic[a], Atomic):
