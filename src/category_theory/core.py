@@ -6,7 +6,19 @@ a = typing.TypeVar("a")
 b = typing.TypeVar("b")
 
 
-class Monoid(ABC, typing.Generic[a]):
+class Atomic:
+    value: typing.Any
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}({type(self.value)})"
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, type(self)):
+            return False
+        return self.value == other.value
+
+
+class Monoid(ABC, typing.Generic[a], Atomic):
     r"""
     A moniod is a type :math:`a` equipped with a binary
     operation :math:`+ : a \times a \rightarrow a` such that the two
@@ -26,11 +38,6 @@ class Monoid(ABC, typing.Generic[a]):
 
     def __init__(self, value: a) -> None:
         self.value = value  # pragma: no cover
-
-    def __eq__(self, other: object) -> bool:
-        if not isinstance(other, Monoid):
-            raise NotImplementedError
-        return self.value == other.value
 
     @staticmethod
     @abstractmethod
@@ -56,9 +63,20 @@ class CommutativeMonoid(Monoid[a]):
         return self.__add__(other)
 
 
-class Functor(ABC, typing.Generic[a]):
+class Functor(ABC, typing.Generic[a], Atomic):
     """A Functor is a mapping between categories."""
 
     @abstractmethod
     def map(self, func: typing.Callable[[a], b]) -> "Functor[b]":
+        ...
+
+
+class Applicative(Functor[a]):
+    @staticmethod
+    @abstractmethod
+    def pure(value: a) -> "Applicative[a]":
+        ...
+
+    @abstractmethod
+    def apply(self, func: "Applicative[typing.Callable[[a], b]]") -> "Applicative[b]":
         ...
