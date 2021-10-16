@@ -7,7 +7,8 @@ b = typing.TypeVar("b")
 
 
 class Atomic:
-    value: typing.Any
+    def __init__(self, value: typing.Any) -> None:
+        self.value = value
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({type(self.value)})"

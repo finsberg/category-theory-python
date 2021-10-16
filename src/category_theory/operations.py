@@ -1,4 +1,5 @@
 import functools
+import math
 import typing
 
 from .core import Monoid
@@ -6,6 +7,18 @@ from .core import Monoid
 a = typing.TypeVar("a")
 b = typing.TypeVar("b")
 c = typing.TypeVar("c")
+
+
+def identity(x: a) -> a:
+    return x
+
+
+def is_nothing(x: typing.Optional[a]) -> typing.TypeGuard[a]:
+    if x is None:
+        return True
+    if isinstance(x, float):
+        return math.isinf(x) or math.isnan(x)
+    return False
 
 
 def compose(
