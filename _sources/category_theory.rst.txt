@@ -4,6 +4,14 @@ category\_theory package
 Submodules
 ----------
 
+category\_theory.applicative module
+-----------------------------------
+
+.. automodule:: category_theory.applicative
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 category\_theory.core module
 ----------------------------
 
