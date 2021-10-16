@@ -10,12 +10,14 @@ Topics to be covered are
 
 - [x] Moniods
 - [ ] Functors (in progress)
-- [ ] Applicative Functors
+- [ ] Applicative Functors (in progress)
 - [ ] Monads
 
 This list might be more detailed in the future.
 
 My assessment is manly based on the book called [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/) by Bartosz Milewski and the podcast [LambdaCast](https://soundcloud.com/lambda-cast)
+
+I will also use this platform to investigate some of the more advanced features of python's typing system, and will therefore only support the latest version of python.
 
 
 ## Contributing
