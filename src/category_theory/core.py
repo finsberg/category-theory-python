@@ -65,17 +65,62 @@ class Functor(ABC, typing.Generic[a], Atomic):
     """A Functor is a mapping between categories.
 
     In programming sense we typically think of a Functor
-    as a container. Examples for Functors are Lists and Queues
+    as a container, parameterized by a type `a`.
+
+    Examples for Functors are Lists and Queues
     which are structures that we typically would think of as
     containers, but other examples of Functors are
     Maybe, Either and Promise which are less container like.
     The key features is that the structure contains something, and
     given a function, we can apply it to the thing inside our structure.
+    Note that the thing inside the structure has type `a`.
+
+    Example
+    -------
+    For example `a` could be string and the functor could
+    be `List`, in which case we have a list of strings.
     """
 
     @abstractmethod
     def map(self, func: typing.Callable[[a], b]) -> "Functor[b]":
-        """Take a function and apply it to each element in the structure"""
+        r"""Take a function and apply it to each element in the structure
+
+        Given a function
+
+        ..math::
+
+            f : a \mapsto b
+
+        apply :math:`f` to all elements in the structure.
+
+        Example
+        -------
+        Lets suppose the functor is a `List` and `a` is `int`, so that
+        we have a list of integers. Then one possible :math:`f` could be
+
+        ..math::
+
+            f : \text{int} \mapsto \text{bool}
+            f(x) = \begin{cases}
+                \text{True, if } x | 2, \\
+                \text{False, if } x \not | 2.
+                \end{cases}
+
+        In other :math:`f` is the function better known as *is_even*.
+        If The list is given by
+
+        ..code::
+
+            >> F = [1, 2, 3, 3]
+
+        then
+
+        ..code::
+
+            >> f = lambda x : x % 2 == 0
+            >> F.map(f)
+            [False, True, False, True]
+        """
         ...
 
 

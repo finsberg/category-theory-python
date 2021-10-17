@@ -47,7 +47,7 @@ class IntProd(CommutativeMonoid[int]):
 
 
 class MaybeIntPlus(CommutativeMonoid[typing.Optional[int]]):
-    """Monoid whose values are mayby integers.
+    """Monoid whose values are maybe integers.
     This means that the value can be int or None.
     Binary operation is the plus operation is the
     value is of type int and returns None otherwise.
@@ -67,7 +67,7 @@ class MaybeIntPlus(CommutativeMonoid[typing.Optional[int]]):
 
 
 class MaybeIntProd(CommutativeMonoid[typing.Optional[int]]):
-    """Monoid whose values are mayby integers.
+    """Monoid whose values are maybe integers.
     This means that the value can be int or None.
     Binary operation is the multiplication operation is the
     value is of type int and returns None otherwise.

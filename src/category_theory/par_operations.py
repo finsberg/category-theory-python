@@ -14,7 +14,7 @@ def chunkify(
 ) -> typing.Iterable[typing.Iterable[typing.Any]]:
     """Split iterable into chunks of size `chunk_size`.
     If all chunks does not add up, it will use the
-    `fillvalue` in the remainin spots
+    `fillvalue` in the remaining spots
 
     Parameters
     ----------
