@@ -87,39 +87,12 @@ class Functor(ABC, typing.Generic[a], Atomic):
 
         Given a function
 
-        ..math::
+        .. math::
 
             f : a \mapsto b
 
         apply :math:`f` to all elements in the structure.
 
-        Example
-        -------
-        Lets suppose the functor is a `List` and `a` is `int`, so that
-        we have a list of integers. Then one possible :math:`f` could be
-
-        ..math::
-
-            f : \text{int} \mapsto \text{bool}
-            f(x) = \begin{cases}
-                \text{True, if } x | 2, \\
-                \text{False, if } x \not | 2.
-                \end{cases}
-
-        In other :math:`f` is the function better known as *is_even*.
-        If The list is given by
-
-        ..code::
-
-            >> F = [1, 2, 3, 3]
-
-        then
-
-        ..code::
-
-            >> f = lambda x : x % 2 == 0
-            >> F.map(f)
-            [False, True, False, True]
         """
         ...
 

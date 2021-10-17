@@ -27,10 +27,7 @@ jobs:
 
       - name: Build docs
         run: |
-          rm -f docs/source/category_theory.rst
-          rm -f docs/source/modules.rst
-          sphinx-apidoc -o docs/source src/category_theory
-          cd docs && make clean && make html
+          make docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

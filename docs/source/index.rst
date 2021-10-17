@@ -10,6 +10,7 @@ Welcome to Category Theory for Python programmers's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   README
    category_theory
    modules
 

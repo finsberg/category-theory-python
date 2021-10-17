@@ -53,11 +53,14 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/source/category_theory.rst
 	rm -f docs/source/modules.rst
 	for file in README.md; do \
-		cp $$file docs/. ;\
+		cp $$file docs/source/. ;\
 	done
 	sphinx-apidoc -o docs/source src/category_theory
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
+
+show-docs:
+	open docs/build/html/index.html
 
 release: dist ## package and upload a release
 	python3 -m twine upload -u ${PYPI_USERNAME} -p ${PYPI_PASSWORD} dist/*
