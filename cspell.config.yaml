@@ -4,3 +4,4 @@ dictionaryDefinitions:
     addWords: true
 dictionaries:
   - category_theory
+ignoreWords: [quickstart, toctree, maxdepth, genindex, modindex]

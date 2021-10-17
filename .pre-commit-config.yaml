@@ -44,4 +44,4 @@ repos:
     rev: v5.6.10
     hooks:
       - id: cspell
-        types: [file, python, markdown]
+        files: src/|docs/source/|tests
