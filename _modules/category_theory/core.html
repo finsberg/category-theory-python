@@ -32,6 +32,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,12 +63,12 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
-<ul class="nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about.html">
+   Category theory
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../README.html">
    Category Theory for python programmers
@@ -200,10 +201,12 @@
 <div class="viewcode-block" id="Monoid.e"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Monoid.e">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">e</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Identity element&quot;&quot;&quot;</span>
         <span class="o">...</span></div>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Binary operation&quot;&quot;&quot;</span>
         <span class="o">...</span></div>
 
 
@@ -253,6 +256,14 @@
 
 
 <div class="viewcode-block" id="Applicative"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Applicative">[docs]</a><span class="k">class</span> <span class="nc">Applicative</span><span class="p">(</span><span class="n">Functor</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
+    <span class="sd">&quot;&quot;&quot;An applicative functor is a functor that</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Functor : [type]</span>
+<span class="sd">        [description]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
 <div class="viewcode-block" id="Applicative.pure"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Applicative.pure">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">pure</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Applicative[a]&quot;</span><span class="p">:</span>

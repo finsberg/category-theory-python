@@ -34,6 +34,7 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="category_theory" href="modules.html" />
@@ -66,12 +67,12 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
-<ul class="current nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Category theory
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="README.html">
    Category Theory for python programmers
@@ -268,6 +269,12 @@
 <dt class="sig sig-object py" id="category_theory.core.Applicative">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.core.</span></span><span class="sig-name descname"><span class="pre">Applicative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/core.html#Applicative"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Applicative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#category_theory.core.Functor" title="category_theory.core.Functor"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.Functor</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">category_theory.core.a</span></code>]</p>
+<p>An applicative functor is a functor that</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Functor</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.core.Applicative.apply">
 <em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#category_theory.core.Applicative" title="category_theory.core.Applicative"><span class="pre">category_theory.core.Applicative</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.core.a</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">category_theory.core.b</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.core.Applicative" title="category_theory.core.Applicative"><span class="pre">category_theory.core.Applicative</span></a><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.core.b</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/core.html#Applicative.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Applicative.apply" title="Permalink to this definition">¶</a></dt>
@@ -345,7 +352,8 @@ semigroup is the precense of an identity element.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.core.Monoid.e">
 <em class="property"><span class="pre">abstract</span> <span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/core.html#Monoid.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Monoid.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity element</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -428,7 +436,8 @@ If The list is given by</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.monoid.All.e">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.monoid.All" title="category_theory.monoid.All"><span class="pre">category_theory.monoid.All</span></a></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#All.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.All.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity element</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -439,7 +448,8 @@ If The list is given by</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.monoid.Any.e">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.monoid.Any" title="category_theory.monoid.Any"><span class="pre">category_theory.monoid.Any</span></a></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#Any.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.Any.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity element</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -453,7 +463,8 @@ and identity element is 0</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.monoid.IntPlus.e">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.monoid.IntPlus" title="category_theory.monoid.IntPlus"><span class="pre">category_theory.monoid.IntPlus</span></a></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#IntPlus.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.IntPlus.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity element</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -467,7 +478,8 @@ and identity element is 1</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.monoid.IntProd.e">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.monoid.IntProd" title="category_theory.monoid.IntProd"><span class="pre">category_theory.monoid.IntProd</span></a></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#IntProd.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.IntProd.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity element</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -483,7 +495,8 @@ Identity element is MaybeIntPlus(0)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.monoid.MaybeIntPlus.e">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.monoid.MaybeIntPlus" title="category_theory.monoid.MaybeIntPlus"><span class="pre">category_theory.monoid.MaybeIntPlus</span></a></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#MaybeIntPlus.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.MaybeIntPlus.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity element</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -499,7 +512,8 @@ Identity element is MaybeIntProd(1)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.monoid.MaybeIntProd.e">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.monoid.MaybeIntProd" title="category_theory.monoid.MaybeIntProd"><span class="pre">category_theory.monoid.MaybeIntProd</span></a></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#MaybeIntProd.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.MaybeIntProd.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity element</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -513,7 +527,8 @@ and identity element being the empty string</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.monoid.String.e">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.monoid.String" title="category_theory.monoid.String"><span class="pre">category_theory.monoid.String</span></a></span></span><a class="reference internal" href="_modules/category_theory/monoid.html#String.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.String.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity element</p>
+</dd></dl>
 
 </dd></dl>
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>category_theory &#8212; Category Theory for Python programmers 0.1.0 documentation</title>
+    <title>Category theory &#8212; Category Theory for Python programmers 0.1.0 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -32,10 +32,13 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <link rel="author" title="About these documents" href="about.html" />
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="author" title="About these documents" href="#" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="category_theory package" href="category_theory.html" />
+    <link rel="next" title="Category Theory for python programmers" href="README.html" />
+    <link rel="prev" title="Welcome to Category Theory for Python programmers’s documentation!" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -65,8 +68,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="about.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Category theory
   </a>
  </li>
@@ -80,11 +83,11 @@
    category_theory package
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="modules.html">
    category_theory
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
@@ -138,9 +141,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/modules.rst.txt"><button type="button"
+        <a class="dropdown-buttons" href="_sources/about.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -163,6 +166,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#category">
+   Category
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -171,22 +187,32 @@
         
               <div>
                 
-  <div class="section" id="category-theory">
-<h1>category_theory<a class="headerlink" href="#category-theory" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="category_theory.html">category_theory package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="category_theory.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="category_theory.html#module-category_theory.applicative">category_theory.applicative module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="category_theory.html#module-category_theory.core">category_theory.core module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="category_theory.html#module-category_theory.functor">category_theory.functor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="category_theory.html#module-category_theory.monoid">category_theory.monoid module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="category_theory.html#module-category_theory.operations">category_theory.operations module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="category_theory.html#module-category_theory.par_operations">category_theory.par_operations module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="category_theory.html#module-category_theory">Module contents</a></li>
-</ul>
-</li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="category-theory">
+<h1>Category theory<a class="headerlink" href="#category-theory" title="Permalink to this headline">¶</a></h1>
+<p>Category theory is probably the most abstract form of mathematics
+there is. It is the theory that tries to unite all areas of mathematics.
+It turns out that many concepts that arises in different areas of mathematics
+share some common properties. That is, if your know about a relation in
+set theory, then there is a similar relation in logic, or algebra.</p>
+<p>From a programmers perspective, category theory is interesting because
+we can use it to study type theory.</p>
+<div class="section" id="category">
+<h2>Category<a class="headerlink" href="#category" title="Permalink to this headline">¶</a></h2>
+<p>A category is a collection of objects that are linked by arrows.
+We typically refer the the arrows as morphisms, and if you have knowledge
+of higher mathematics, you know that there exists different types of morphisms,
+such as isomorphisms, homomorphisms, homeomorphism, etc.</p>
+<p>In the category of sets the objects would typically be sets, and the arrows
+could be regular functions, i.e mappings from one set into another.</p>
+<p>There are two axioms for a category</p>
+<ol class="simple">
+<li><p>If there exist <span class="math notranslate nohighlight">\(f : a \mapsto b\)</span> and <span class="math notranslate nohighlight">\(g : b \mapsto c\)</span> then there exist
+<span class="math notranslate nohighlight">\(h : a \mapsto c\)</span>, such that <span class="math notranslate nohighlight">\(h = g \circ f\)</span> (the composition).</p></li>
+<li><p>For each object <span class="math notranslate nohighlight">\(x\)</span> in the category there exist an arrow, called the
+identity arrow <span class="math notranslate nohighlight">\(1_x: x \mapsto x\)</span>, such that for every morphism
+<span class="math notranslate nohighlight">\(f : a \mapsto b\)</span> we have <span class="math notranslate nohighlight">\(1_x \circ f = f\)</span> and for every morphism
+<span class="math notranslate nohighlight">\(g : b \mapsto x\)</span> we have <span class="math notranslate nohighlight">\(g \circ 1_x = g\)</span>.</p></li>
+</ol>
 </div>
 </div>
 
@@ -201,14 +227,23 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="category_theory.html" title="previous page">
+        <a class="left-prev" href="index.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">category_theory package</p>
+                <p class="prevnext-title">Welcome to Category Theory for Python programmers’s documentation!</p>
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="README.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Category Theory for python programmers</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
