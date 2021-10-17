@@ -1,6 +1,8 @@
+Bartosz
 chunk
 chunkified
 chunkify
+codecov
 dask
 foldr
 functor
@@ -8,6 +10,7 @@ Functor
 Functors
 funtors
 mapsto
+Milewski
 monoid
 Monoid
 monoids

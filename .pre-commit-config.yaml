@@ -44,4 +44,4 @@ repos:
     rev: v5.6.10
     hooks:
       - id: cspell
-        files: src/|docs/source/|tests
+        files: src/|docs/source/|tests|README.md
