@@ -1,0 +1,14 @@
+Monoid
+monoid
+Monoids
+monoids
+mapsto
+Functor
+Functors
+functor
+funtors
+dask
+chunkified
+chunk
+foldr
+chunkify

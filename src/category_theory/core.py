@@ -21,7 +21,7 @@ class Atomic:
 
 class Monoid(ABC, typing.Generic[a], Atomic):
     r"""
-    A moniod is a type :math:`a` equipped with a binary
+    A monoid is a type :math:`a` equipped with a binary
     operation :math:`+ : a \times a \rightarrow a` such that the two
     following axioms holds:
 
@@ -35,6 +35,8 @@ class Monoid(ABC, typing.Generic[a], Atomic):
     `__add__` and `__radd__`. For the identity element we require
     a `staticmethod` called `e`.
 
+    A key features of the Monoid structure which separates it from a
+    semigroup is the precense of an identity element.
     """
 
     def __init__(self, value: a) -> None:
@@ -60,10 +62,20 @@ class CommutativeMonoid(Monoid[a]):
 
 
 class Functor(ABC, typing.Generic[a], Atomic):
-    """A Functor is a mapping between categories."""
+    """A Functor is a mapping between categories.
+
+    In programming sense we typically think of a Functor
+    as a container. Examples for Functors are Lists and Queues
+    which are structures that we typically would think of as
+    containers, but other examples of Functors are
+    Maybe, Either and Promise which are less container like.
+    The key features is that the structure contains something, and
+    given a function, we can apply it to the thing inside our structure.
+    """
 
     @abstractmethod
     def map(self, func: typing.Callable[[a], b]) -> "Functor[b]":
+        """Take a function and apply it to each element in the structure"""
         ...
 
 

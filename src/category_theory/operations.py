@@ -10,10 +10,42 @@ c = typing.TypeVar("c")
 
 
 def identity(x: a) -> a:
+    r"""Identity function
+
+    .. math::
+
+        f : a \mapsto a \\
+        f(x) = x
+
+    Parameters
+    ----------
+    x : a
+        Input variable
+
+    Returns
+    -------
+    a
+        Output variable :math:`f(x)`
+    """
     return x
 
 
 def is_nothing(x: typing.Optional[a]) -> typing.TypeGuard[a]:
+    """Check if a variable should be declared as Nothing.
+
+    Parameters
+    ----------
+    x : typing.Optional[a]
+        The variable
+
+    Returns
+    -------
+    typing.TypeGuard[a]
+        Returns true if the variable is nothing and false otherwise.
+        Note that er make use of TypGuard here which tell the type
+        checker than if the thing we get in is None, then this
+        function will return True
+    """
     if x is None:
         return True
     if isinstance(x, float):

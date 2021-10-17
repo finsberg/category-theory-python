@@ -1,0 +1,6 @@
+dictionaryDefinitions:
+  - name: category_theory
+    path: .cspell_dict.txt
+    addWords: true
+dictionaries:
+  - category_theory

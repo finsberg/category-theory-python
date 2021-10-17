@@ -9,7 +9,6 @@ repos:
       - id: trailing-whitespace
       - id: check-docstring-first
       - id: debug-statements
-      - id: requirements-txt-fixer
 
   - repo: https://github.com/asottile/reorder_python_imports
     rev: v2.6.0
@@ -40,3 +39,9 @@ repos:
     rev: v0.910-1
     hooks:
       - id: mypy
+
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v5.6.10
+    hooks:
+      - id: cspell
+        files: src
