@@ -11,7 +11,6 @@ common patterns in python.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
 
    about
    README
