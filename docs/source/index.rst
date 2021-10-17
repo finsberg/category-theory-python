@@ -6,10 +6,14 @@
 Welcome to Category Theory for Python programmers's documentation!
 ==================================================================
 
+This is my attempt to learn category theory by implementing some of the
+common patterns in python.
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
+   about
    README
    category_theory
    modules

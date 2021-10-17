@@ -45,10 +45,12 @@ class Monoid(ABC, typing.Generic[a], Atomic):
     @staticmethod
     @abstractmethod
     def e() -> typing.Any:
+        """Identity element"""
         ...
 
     @abstractmethod
     def __add__(self, other: typing.Any):
+        """Binary operation"""
         ...
 
 
@@ -98,6 +100,14 @@ class Functor(ABC, typing.Generic[a], Atomic):
 
 
 class Applicative(Functor[a]):
+    """An applicative functor is a functor that
+
+    Parameters
+    ----------
+    Functor : [type]
+        [description]
+    """
+
     @staticmethod
     @abstractmethod
     def pure(value: a) -> "Applicative[a]":
