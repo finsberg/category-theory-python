@@ -69,6 +69,11 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Category Theory for python programmers
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../category_theory.html">
    category_theory package
   </a>
@@ -162,6 +167,38 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="List.map"><a class="viewcode-back" href="../../category_theory.html#category_theory.functor.List.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;List[b]&quot;</span><span class="p">:</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Lets suppose the functor is a `List` and `a` is `int`, so that</span>
+<span class="sd">        we have a list of integers. Then one possible :math:`f` could be</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            f : \text{int} \mapsto \text{bool}</span>
+<span class="sd">            f(x) = \begin{cases}</span>
+<span class="sd">                \text{True, if } x | 2, \\</span>
+<span class="sd">                \text{False, if } x \nmid 2.</span>
+<span class="sd">                \end{cases}</span>
+
+<span class="sd">        In other :math:`f` is the function better known as *is_even*.</span>
+<span class="sd">        If The list is given by</span>
+
+<span class="sd">        .. code::</span>
+
+<span class="sd">            &gt;&gt; F = List([1, 2, 3, 3])</span>
+
+<span class="sd">        then</span>
+
+<span class="sd">        .. code::</span>
+
+<span class="sd">            &gt;&gt; f = lambda x : x % 2 == 0</span>
+<span class="sd">            &gt;&gt; F.map(f)</span>
+<span class="sd">            List([False, True, False, True])</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[b]</span>
+<span class="sd">            A new list after applying the map</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">List</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)))</span></div></div>
 
 

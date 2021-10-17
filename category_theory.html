@@ -33,10 +33,11 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="category_theory" href="modules.html" />
-    <link rel="prev" title="Welcome to Category Theory for Python programmers’s documentation!" href="index.html" />
+    <link rel="prev" title="Category Theory for python programmers" href="README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -71,6 +72,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Category Theory for python programmers
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    category_theory package
@@ -294,10 +300,27 @@ i.e <span class="math notranslate nohighlight">\(a + b = b + a\)</span></p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.core.</span></span><span class="sig-name descname"><span class="pre">Functor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/core.html#Functor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Functor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">category_theory.core.a</span></code>], <a class="reference internal" href="#category_theory.core.Atomic" title="category_theory.core.Atomic"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.Atomic</span></code></a></p>
 <p>A Functor is a mapping between categories.</p>
+<p>In programming sense we typically think of a Functor
+as a container, parameterized by a type <cite>a</cite>.</p>
+<p>Examples for Functors are Lists and Queues
+which are structures that we typically would think of as
+containers, but other examples of Functors are
+Maybe, Either and Promise which are less container like.
+The key features is that the structure contains something, and
+given a function, we can apply it to the thing inside our structure.
+Note that the thing inside the structure has type <cite>a</cite>.</p>
+<p class="rubric">Example</p>
+<p>For example <cite>a</cite> could be string and the functor could
+be <cite>List</cite>, in which case we have a list of strings.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.core.Functor.map">
 <em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.core.a</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">category_theory.core.b</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.core.Functor" title="category_theory.core.Functor"><span class="pre">category_theory.core.Functor</span></a><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.core.b</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/core.html#Functor.map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Functor.map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Take a function and apply it to each element in the structure</p>
+<p>Given a function</p>
+<div class="math notranslate nohighlight">
+\[f : a \mapsto b\]</div>
+<p>apply <span class="math notranslate nohighlight">\(f\)</span> to all elements in the structure.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -305,7 +328,7 @@ i.e <span class="math notranslate nohighlight">\(a + b = b + a\)</span></p>
 <dt class="sig sig-object py" id="category_theory.core.Monoid">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.core.</span></span><span class="sig-name descname"><span class="pre">Monoid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">category_theory.core.a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/core.html#Monoid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Monoid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">category_theory.core.a</span></code>], <a class="reference internal" href="#category_theory.core.Atomic" title="category_theory.core.Atomic"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.Atomic</span></code></a></p>
-<p>A moniod is a type <span class="math notranslate nohighlight">\(a\)</span> equipped with a binary
+<p>A monoid is a type <span class="math notranslate nohighlight">\(a\)</span> equipped with a binary
 operation <span class="math notranslate nohighlight">\(+ : a \times a \rightarrow a\)</span> such that the two
 following axioms holds:</p>
 <ul class="simple">
@@ -317,6 +340,8 @@ such that <cite>a + e = e + a = a</cite></p></li>
 any class that wants inherit from <cite>Monoid</cite> need to implement
 <cite>__add__</cite> and <cite>__radd__</cite>. For the identity element we require
 a <cite>staticmethod</cite> called <cite>e</cite>.</p>
+<p>A key features of the Monoid structure which separates it from a
+semigroup is the precense of an identity element.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.core.Monoid.e">
 <em class="property"><span class="pre">abstract</span> <span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/category_theory/core.html#Monoid.e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.core.Monoid.e" title="Permalink to this definition">¶</a></dt>
@@ -334,7 +359,12 @@ a <cite>staticmethod</cite> called <cite>e</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.functor.Just.map">
 <span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.a</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">category_theory.functor.b</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.functor.Just" title="category_theory.functor.Just"><span class="pre">category_theory.functor.Just</span></a><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.b</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/functor.html#Just.map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.functor.Just.map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Take a function and apply it to each element in the structure</p>
+<p>Given a function</p>
+<div class="math notranslate nohighlight">
+\[f : a \mapsto b\]</div>
+<p>apply <span class="math notranslate nohighlight">\(f\)</span> to all elements in the structure.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -345,7 +375,34 @@ a <cite>staticmethod</cite> called <cite>e</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="category_theory.functor.List.map">
 <span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.a</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">category_theory.functor.b</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#category_theory.functor.List" title="category_theory.functor.List"><span class="pre">category_theory.functor.List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.functor.b</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/functor.html#List.map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.functor.List.map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Lets suppose the functor is a <cite>List</cite> and <cite>a</cite> is <cite>int</cite>, so that
+we have a list of integers. Then one possible <span class="math notranslate nohighlight">\(f\)</span> could be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f : \text{int} \mapsto \text{bool}
+f(x) = \begin{cases}
+    \text{True, if } x | 2, \\
+    \text{False, if } x \nmid 2.
+    \end{cases}\end{split}\]</div>
+<p>In other <span class="math notranslate nohighlight">\(f\)</span> is the function better known as <em>is_even</em>.
+If The list is given by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">F</span> <span class="o">=</span> <span class="n">List</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>then</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="o">&gt;&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">List</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A new list after applying the map</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#category_theory.functor.List" title="category_theory.functor.List">List</a>[b]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -418,7 +475,7 @@ and identity element is 1</p>
 <dt class="sig sig-object py" id="category_theory.monoid.MaybeIntPlus">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.monoid.</span></span><span class="sig-name descname"><span class="pre">MaybeIntPlus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">category_theory.core.a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/monoid.html#MaybeIntPlus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.MaybeIntPlus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#category_theory.core.CommutativeMonoid" title="category_theory.core.CommutativeMonoid"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.CommutativeMonoid</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</p>
-<p>Monoid whose values are mayby integers.
+<p>Monoid whose values are maybe integers.
 This means that the value can be int or None.
 Binary operation is the plus operation is the
 value is of type int and returns None otherwise.
@@ -434,7 +491,7 @@ Identity element is MaybeIntPlus(0)</p>
 <dt class="sig sig-object py" id="category_theory.monoid.MaybeIntProd">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">category_theory.monoid.</span></span><span class="sig-name descname"><span class="pre">MaybeIntProd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">category_theory.core.a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/category_theory/monoid.html#MaybeIntProd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.monoid.MaybeIntProd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#category_theory.core.CommutativeMonoid" title="category_theory.core.CommutativeMonoid"><code class="xref py py-class docutils literal notranslate"><span class="pre">category_theory.core.CommutativeMonoid</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</p>
-<p>Monoid whose values are mayby integers.
+<p>Monoid whose values are maybe integers.
 This means that the value can be int or None.
 Binary operation is the multiplication operation is the
 value is of type int and returns None otherwise.
@@ -534,12 +591,42 @@ element as initial.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="category_theory.operations.identity">
 <span class="sig-prename descclassname"><span class="pre">category_theory.operations.</span></span><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">category_theory.operations.a</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">category_theory.operations.a</span></span></span><a class="reference internal" href="_modules/category_theory/operations.html#identity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.operations.identity" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Identity function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f : a \mapsto a \\
+f(x) = x\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>a</em>) – Input variable</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Output variable <span class="math notranslate nohighlight">\(f(x)\)</span></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>a</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="category_theory.operations.is_nothing">
 <span class="sig-prename descclassname"><span class="pre">category_theory.operations.</span></span><span class="sig-name descname"><span class="pre">is_nothing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.operations.a</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TypeGuard</span><span class="p"><span class="pre">[</span></span><span class="pre">category_theory.operations.a</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/operations.html#is_nothing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.operations.is_nothing" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Check if a variable should be declared as Nothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>typing.Optional</em><em>[</em><em>a</em><em>]</em>) – The variable</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns true if the variable is nothing and false otherwise.
+Note that er make use of TypGuard here which tell the type
+checker than if the thing we get in is None, then this
+function will return True</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>typing.TypeGuard[a]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 <div class="section" id="module-category_theory.par_operations">
@@ -549,7 +636,7 @@ element as initial.</p>
 <span class="sig-prename descclassname"><span class="pre">category_theory.par_operations.</span></span><span class="sig-name descname"><span class="pre">chunkify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillvalue</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/category_theory/par_operations.html#chunkify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#category_theory.par_operations.chunkify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split iterable into chunks of size <cite>chunk_size</cite>.
 If all chunks does not add up, it will use the
-<cite>fillvalue</cite> in the remainin spots</p>
+<cite>fillvalue</cite> in the remaining spots</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -674,11 +761,11 @@ element as initial.</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
+        <a class="left-prev" href="README.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Welcome to Category Theory for Python programmers’s documentation!</p>
+                <p class="prevnext-title">Category Theory for python programmers</p>
             </div>
         </a>
     </div>

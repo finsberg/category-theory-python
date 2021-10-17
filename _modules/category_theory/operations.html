@@ -69,6 +69,11 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Category Theory for python programmers
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../category_theory.html">
    category_theory package
   </a>
@@ -160,10 +165,42 @@
 
 
 <div class="viewcode-block" id="identity"><a class="viewcode-back" href="../../category_theory.html#category_theory.operations.identity">[docs]</a><span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Identity function</span>
+
+<span class="sd">    .. math::</span>
+
+<span class="sd">        f : a \mapsto a \\</span>
+<span class="sd">        f(x) = x</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : a</span>
+<span class="sd">        Input variable</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    a</span>
+<span class="sd">        Output variable :math:`f(x)`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span></div>
 
 
 <div class="viewcode-block" id="is_nothing"><a class="viewcode-back" href="../../category_theory.html#category_theory.operations.is_nothing">[docs]</a><span class="k">def</span> <span class="nf">is_nothing</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeGuard</span><span class="p">[</span><span class="n">a</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Check if a variable should be declared as Nothing.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : typing.Optional[a]</span>
+<span class="sd">        The variable</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    typing.TypeGuard[a]</span>
+<span class="sd">        Returns true if the variable is nothing and false otherwise.</span>
+<span class="sd">        Note that er make use of TypGuard here which tell the type</span>
+<span class="sd">        checker than if the thing we get in is None, then this</span>
+<span class="sd">        function will return True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>

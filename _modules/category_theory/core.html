@@ -69,6 +69,11 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Category Theory for python programmers
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../category_theory.html">
    category_theory package
   </a>
@@ -171,7 +176,7 @@
 
 <div class="viewcode-block" id="Monoid"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Monoid">[docs]</a><span class="k">class</span> <span class="nc">Monoid</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generic</span><span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">Atomic</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A moniod is a type :math:`a` equipped with a binary</span>
+<span class="sd">    A monoid is a type :math:`a` equipped with a binary</span>
 <span class="sd">    operation :math:`+ : a \times a \rightarrow a` such that the two</span>
 <span class="sd">    following axioms holds:</span>
 
@@ -185,6 +190,8 @@
 <span class="sd">    `__add__` and `__radd__`. For the identity element we require</span>
 <span class="sd">    a `staticmethod` called `e`.</span>
 
+<span class="sd">    A key features of the Monoid structure which separates it from a</span>
+<span class="sd">    semigroup is the precense of an identity element.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -210,10 +217,38 @@
 
 
 <div class="viewcode-block" id="Functor"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Functor">[docs]</a><span class="k">class</span> <span class="nc">Functor</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generic</span><span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">Atomic</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A Functor is a mapping between categories.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;A Functor is a mapping between categories.</span>
+
+<span class="sd">    In programming sense we typically think of a Functor</span>
+<span class="sd">    as a container, parameterized by a type `a`.</span>
+
+<span class="sd">    Examples for Functors are Lists and Queues</span>
+<span class="sd">    which are structures that we typically would think of as</span>
+<span class="sd">    containers, but other examples of Functors are</span>
+<span class="sd">    Maybe, Either and Promise which are less container like.</span>
+<span class="sd">    The key features is that the structure contains something, and</span>
+<span class="sd">    given a function, we can apply it to the thing inside our structure.</span>
+<span class="sd">    Note that the thing inside the structure has type `a`.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    For example `a` could be string and the functor could</span>
+<span class="sd">    be `List`, in which case we have a list of strings.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Functor.map"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Functor.map">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Functor[b]&quot;</span><span class="p">:</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Take a function and apply it to each element in the structure</span>
+
+<span class="sd">        Given a function</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">            f : a \mapsto b</span>
+
+<span class="sd">        apply :math:`f` to all elements in the structure.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="o">...</span></div></div>
 
 
