@@ -36,7 +36,7 @@ class Monoid(ABC, typing.Generic[a], Atomic):
     a `staticmethod` called `e`.
 
     A key features of the Monoid structure which separates it from a
-    semigroup is the precense of an identity element.
+    semigroup is the presence of an identity element.
     """
 
     def __init__(self, value: a) -> None:

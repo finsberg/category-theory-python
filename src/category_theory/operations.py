@@ -59,7 +59,7 @@ def compose(
 ) -> typing.Callable[[a], c]:
     r"""Compose two functions :math:`g` and :math:`f`, :math:`g \circ f`.
 
-    We have the follwing two functions
+    We have the following two functions
 
     .. math::
 
