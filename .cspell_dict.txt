@@ -4,12 +4,15 @@ chunkified
 chunkify
 codecov
 dask
+fillvalue
+Finsberg
 foldr
 functor
 Functor
 Functors
 funtors
 mapsto
+maybeint
 Milewski
 monoid
 Monoid
@@ -18,3 +21,6 @@ Monoids
 morphism
 morphisms
 parop
+rightarrow
+semigroup
+viewcode
