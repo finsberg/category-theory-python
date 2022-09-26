@@ -11,12 +11,12 @@ repos:
       - id: debug-statements
 
   - repo: https://github.com/asottile/reorder_python_imports
-    rev: v3.8.2
+    rev: v3.8.3
     hooks:
       - id: reorder-python-imports
 
   - repo: https://github.com/psf/black
-    rev: 22.6.0
+    rev: 22.8.0
     hooks:
       - id: black
 
@@ -26,7 +26,7 @@ repos:
       - id: flake8
 
   - repo: https://github.com/asottile/add-trailing-comma
-    rev: v2.2.3
+    rev: v2.3.0
     hooks:
       - id: add-trailing-comma
 
@@ -41,7 +41,7 @@ repos:
       - id: mypy
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v6.8.1
+    rev: v6.10.0
     hooks:
       - id: cspell
         files: src/|docs/source/|tests|README.md
