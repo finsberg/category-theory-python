@@ -29,11 +29,11 @@ def test_List_identity(x):
 
 @st.composite
 def chained_functions(draw, elements=st.integers()):
-    def f(x: int) -> float:
-        pass
+    def f(x: int) -> float:  # type: ignore
+        ...
 
-    def g(y: float) -> str:
-        pass
+    def g(y: float) -> str:  # type: ignore
+        ...
 
     func1 = draw(st.functions(like=f, pure=True, returns=st.floats()))
     func2 = draw(st.functions(like=g, pure=True, returns=st.characters()))
