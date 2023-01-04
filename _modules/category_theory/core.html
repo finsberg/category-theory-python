@@ -223,7 +223,7 @@ title="Fullscreen mode"
 
 
 <div class="viewcode-block" id="Monoid"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Monoid">[docs]</a><span class="k">class</span> <span class="nc">Monoid</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generic</span><span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">Atomic</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A monoid is a type :math:`a` equipped with a binary</span>
 <span class="sd">    operation :math:`+ : a \times a \rightarrow a` such that the two</span>
 <span class="sd">    following axioms holds:</span>
@@ -248,17 +248,17 @@ title="Fullscreen mode"
 <div class="viewcode-block" id="Monoid.e"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Monoid.e">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">e</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Identity element&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Identity element&quot;&quot;&quot;</span>
         <span class="o">...</span></div>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Binary operation&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Binary operation&quot;&quot;&quot;</span>
         <span class="o">...</span></div>
 
 
 <div class="viewcode-block" id="CommutativeMonoid"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.CommutativeMonoid">[docs]</a><span class="k">class</span> <span class="nc">CommutativeMonoid</span><span class="p">(</span><span class="n">Monoid</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;A CommutativeMonoid is just a Monoid</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A CommutativeMonoid is just a Monoid</span>
 <span class="sd">    where the binary operation is commutative,</span>
 <span class="sd">    i.e :math:`a + b = b + a`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -267,7 +267,7 @@ title="Fullscreen mode"
 
 
 <div class="viewcode-block" id="Functor"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Functor">[docs]</a><span class="k">class</span> <span class="nc">Functor</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generic</span><span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">Atomic</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A Functor is a mapping between categories.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Functor is a mapping between categories.</span>
 
 <span class="sd">    In programming sense we typically think of a Functor</span>
 <span class="sd">    as a container, parameterized by a type `a`.</span>
@@ -288,7 +288,7 @@ title="Fullscreen mode"
 
 <div class="viewcode-block" id="Functor.map"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Functor.map">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Functor[b]&quot;</span><span class="p">:</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Take a function and apply it to each element in the structure</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Take a function and apply it to each element in the structure</span>
 
 <span class="sd">        Given a function</span>
 
@@ -303,7 +303,7 @@ title="Fullscreen mode"
 
 
 <div class="viewcode-block" id="Applicative"><a class="viewcode-back" href="../../category_theory.html#category_theory.core.Applicative">[docs]</a><span class="k">class</span> <span class="nc">Applicative</span><span class="p">(</span><span class="n">Functor</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;An applicative functor is a functor that</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An applicative functor is a functor that</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
