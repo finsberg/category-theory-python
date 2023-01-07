@@ -1,7 +1,7 @@
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/finsberg/category-theory-python/master.svg)](https://results.pre-commit.ci/latest/github/finsberg/category-theory-python/master)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/finsberg/category-theory-python/main.svg)](https://results.pre-commit.ci/latest/github/finsberg/category-theory-python/main)
 [![CI](https://github.com/finsberg/category-theory-python/actions/workflows/main.yml/badge.svg)](https://github.com/finsberg/category-theory-python/actions/workflows/main.yml)
 [![github pages](https://github.com/finsberg/category-theory-python/actions/workflows/github-pages.yml/badge.svg)](https://github.com/finsberg/category-theory-python/actions/workflows/github-pages.yml)
-[![codecov](https://codecov.io/gh/finsberg/category-theory-python/branch/master/graph/badge.svg?token=PW1CXOLVAS)](https://codecov.io/gh/finsberg/category-theory-python)
+[![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/finsberg/a7290de789564f03eb6b1ee122fce423/raw/category-theory-python-coverage.json)](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/finsberg/a7290de789564f03eb6b1ee122fce423/raw/category-theory-python-coverage.json)
 
 # Category Theory for python programmers
 
