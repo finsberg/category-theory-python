@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Category Theory for python programmers &#8212; Category Theory for Python programmers 0.1.0 documentation</title>
   
@@ -29,18 +28,18 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -132,7 +131,18 @@
     <p class="title logo__title">Category Theory for Python programmers 0.1.0 documentation</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="about.html">Category theory</a></li>
@@ -309,7 +319,7 @@ document.write(`
 <a class="reference external" href="https://github.com/finsberg/category-theory-python/actions/workflows/github-pages.yml"><img alt="github pages" src="https://github.com/finsberg/category-theory-python/actions/workflows/github-pages.yml/badge.svg" /></a>
 <a class="reference external" href="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/finsberg/a7290de789564f03eb6b1ee122fce423/raw/category-theory-python-coverage.json"><img alt="Coverage" src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/finsberg/a7290de789564f03eb6b1ee122fce423/raw/category-theory-python-coverage.json" /></a></p>
 <section id="category-theory-for-python-programmers">
-<h1>Category Theory for python programmers<a class="headerlink" href="#category-theory-for-python-programmers" title="Permalink to this heading">#</a></h1>
+<h1>Category Theory for python programmers<a class="headerlink" href="#category-theory-for-python-programmers" title="Link to this heading">#</a></h1>
 <p>This is my attempt to implement some of the common structures from Category theory in python. Note that I am a beginner in Category theory and will use this repo as way to learn it.</p>
 <p>Topics to be covered are</p>
 <ul class="simple">
@@ -321,15 +331,15 @@ document.write(`
 <p>This list might be more detailed in the future.</p>
 <p>My assessment is manly based on the book called <a class="reference external" href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">Category Theory for Programmers</a> by Bartosz Milewski and the podcast <a class="reference external" href="https://soundcloud.com/lambda-cast">LambdaCast</a></p>
 <section id="typing">
-<h2>Typing<a class="headerlink" href="#typing" title="Permalink to this heading">#</a></h2>
+<h2>Typing<a class="headerlink" href="#typing" title="Link to this heading">#</a></h2>
 <p>I will also use this platform to investigate some of the more advanced features of python’s typing system, and will therefore only support the latest version of python.</p>
 </section>
 <section id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h2>
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
 <p>I am definitely not capable of finding good test cases that can really test the corner cases of my implementation. Therefore I will try to use (and learn) property-based testing using <a class="reference external" href="https://hypothesis.readthedocs.io/en/latest/">Hypothesis</a>.</p>
 </section>
 <section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h2>
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
 <p>This repo is manly for me to learn about these concepts in Category theory. If anyone finds this useful that is great. If you spot any bugs or mistakes I have made I would be grateful if you could file an issue (or even better : first file an issue and then submit a PR).</p>
 </section>
 </section>
