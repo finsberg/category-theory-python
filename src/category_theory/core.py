@@ -110,9 +110,10 @@ class Applicative(Functor[a]):
 
     @staticmethod
     @abstractmethod
-    def pure(value: a) -> "Applicative[a]":
-        ...
+    def pure(value: a) -> "Applicative[a]": ...
 
     @abstractmethod
-    def apply(self, func: "Applicative[typing.Callable[[a], b]]") -> "Applicative[b]":
-        ...
+    def apply(
+        self,
+        func: "Applicative[typing.Callable[[a], b]]",
+    ) -> "Applicative[b]": ...
