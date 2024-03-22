@@ -114,5 +114,6 @@ class Applicative(Functor[a]):
 
     @abstractmethod
     def apply(
-        self, func: "Applicative[typing.Callable[[a], b]]",
+        self,
+        func: "Applicative[typing.Callable[[a], b]]",
     ) -> "Applicative[b]": ...
