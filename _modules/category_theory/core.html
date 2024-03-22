@@ -390,16 +390,17 @@ document.write(`
 <a class="viewcode-back" href="../../category_theory.html#category_theory.core.Applicative.pure">[docs]</a>
     <span class="nd">@staticmethod</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">pure</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Applicative[a]&quot;</span><span class="p">:</span>
-        <span class="o">...</span></div>
+    <span class="k">def</span> <span class="nf">pure</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Applicative[a]&quot;</span><span class="p">:</span> <span class="o">...</span></div>
 
 
 <div class="viewcode-block" id="Applicative.apply">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.core.Applicative.apply">[docs]</a>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="s2">&quot;Applicative[typing.Callable[[a], b]]&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Applicative[b]&quot;</span><span class="p">:</span>
-        <span class="o">...</span></div>
-</div>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span></div>
+
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">func</span><span class="p">:</span> <span class="s2">&quot;Applicative[typing.Callable[[a], b]]&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Applicative[b]&quot;</span><span class="p">:</span> <span class="o">...</span></div>
 
 </pre></div>
 
