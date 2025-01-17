@@ -29,7 +29,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
   
   <!-- So that users can add custom icons -->
@@ -245,10 +245,10 @@
                 <article class="bd-article">
                   
   <h1>Source code for category_theory.functor</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">typing</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>
 
-<span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">Functor</span>
-<span class="kn">from</span> <span class="nn">.operations</span> <span class="kn">import</span> <span class="n">is_nothing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Functor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.operations</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_nothing</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
@@ -256,13 +256,13 @@
 
 <div class="viewcode-block" id="List">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.functor.List">[docs]</a>
-<span class="k">class</span> <span class="nc">List</span><span class="p">(</span><span class="n">Functor</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">List</span><span class="p">(</span><span class="n">Functor</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="List.map">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.functor.List.map">[docs]</a>
-    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;List[b]&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;List[b]&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Lets suppose the functor is a `List` and `a` is `int`, so that</span>
 <span class="sd">        we have a list of integers. Then one possible :math:`f` could be</span>
@@ -302,30 +302,30 @@
 
 <div class="viewcode-block" id="Maybe">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.functor.Maybe">[docs]</a>
-<span class="k">class</span> <span class="nc">Maybe</span><span class="p">(</span><span class="n">Functor</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Maybe</span><span class="p">(</span><span class="n">Functor</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;About maybe&quot;&quot;&quot;</span></div>
 
 
 
 <div class="viewcode-block" id="Just">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.functor.Just">[docs]</a>
-<span class="k">class</span> <span class="nc">Just</span><span class="p">(</span><span class="n">Maybe</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Just</span><span class="p">(</span><span class="n">Maybe</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Just.map">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.functor.Just.map">[docs]</a>
-    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Just[b]&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Just[b]&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">Just</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
 </div>
 
 
 
-<span class="k">class</span> <span class="nc">_Nothing</span><span class="p">(</span><span class="n">Maybe</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_Nothing</span><span class="p">(</span><span class="n">Maybe</span><span class="p">[</span><span class="n">a</span><span class="p">]):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[b]&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[b]&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">Nothing</span>
 
 
@@ -334,7 +334,7 @@
 
 <div class="viewcode-block" id="maybe">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.functor.maybe">[docs]</a>
-<span class="k">def</span> <span class="nf">maybe</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">a</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">maybe</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">a</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">is_nothing</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Nothing</span>
     <span class="k">return</span> <span class="n">Just</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
