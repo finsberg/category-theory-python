@@ -265,15 +265,15 @@ document.write(`
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Monoid</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">"b"</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">"c"</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="identity">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.operations.identity">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">identity</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">:</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Identity function</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">"""Identity function</span>
 
 <span class="sd">    .. math::</span>
 
@@ -289,7 +289,7 @@ document.write(`
 <span class="sd">    -------</span>
 <span class="sd">    a</span>
 <span class="sd">        Output variable :math:`f(x)`</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">x</span></div>
 
 
@@ -297,7 +297,7 @@ document.write(`
 <div class="viewcode-block" id="is_nothing">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.operations.is_nothing">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">is_nothing</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeGuard</span><span class="p">[</span><span class="n">a</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if a variable should be declared as Nothing.</span>
+<span class="w">    </span><span class="sd">"""Check if a variable should be declared as Nothing.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -311,7 +311,7 @@ document.write(`
 <span class="sd">        Note that er make use of TypGuard here which tell the type</span>
 <span class="sd">        checker than if the thing we get in is None, then this</span>
 <span class="sd">        function will return True</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
@@ -326,7 +326,7 @@ document.write(`
     <span class="n">g</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">b</span><span class="p">],</span> <span class="n">c</span><span class="p">],</span>
     <span class="n">f</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">b</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">a</span><span class="p">],</span> <span class="n">c</span><span class="p">]:</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compose two functions :math:`g` and :math:`f`, :math:`g \circ f`.</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">"""Compose two functions :math:`g` and :math:`f`, :math:`g \circ f`.</span>
 
 <span class="sd">    We have the following two functions</span>
 
@@ -352,7 +352,7 @@ document.write(`
 <span class="sd">    -------</span>
 <span class="sd">    typing.Callable[[a], c]</span>
 <span class="sd">        The composition of `f` and `g`</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></div>
 
 
@@ -360,7 +360,7 @@ document.write(`
 <div class="viewcode-block" id="fold">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.operations.fold">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">fold</span><span class="p">(</span><span class="n">lst</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Monoid</span><span class="p">],</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fold an iterable of Monoids together using the identity</span>
+<span class="w">    </span><span class="sd">"""Fold an iterable of Monoids together using the identity</span>
 <span class="sd">    element as initial.</span>
 
 <span class="sd">    Parameters</span>
@@ -374,7 +374,7 @@ document.write(`
 <span class="sd">    -------</span>
 <span class="sd">    typing.Any</span>
 <span class="sd">        The reduction of the iterable.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">return</span> <span class="n">functools</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">e</span><span class="p">())</span></div>
 
@@ -383,7 +383,7 @@ document.write(`
 <div class="viewcode-block" id="foldr">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.operations.foldr">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">foldr</span><span class="p">(</span><span class="n">lst</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Monoid</span><span class="p">],</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Same as `fold`, but from the right</span>
+<span class="w">    </span><span class="sd">"""Same as `fold`, but from the right</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -396,7 +396,7 @@ document.write(`
 <span class="sd">    -------</span>
 <span class="sd">    typing.Any</span>
 <span class="sd">        The reduction of the iterable.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">functools</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span><span class="p">,</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">lst</span><span class="p">)),</span> <span class="bp">cls</span><span class="o">.</span><span class="n">e</span><span class="p">())</span></div>
 
 </pre></div>

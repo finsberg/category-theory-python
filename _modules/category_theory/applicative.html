@@ -265,8 +265,8 @@ document.write(`
 <span class="kn">from</span><span class="w"> </span><span class="nn">.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Applicative</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.operations</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_nothing</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">"b"</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="Maybe">
@@ -275,7 +275,7 @@ document.write(`
 <div class="viewcode-block" id="Maybe.pure">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.applicative.Maybe.pure">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">pure</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[a]&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pure</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"Maybe[a]"</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">maybe</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
 </div>
 
@@ -289,7 +289,7 @@ document.write(`
 
 <div class="viewcode-block" id="Just.apply">
 <a class="viewcode-back" href="../../category_theory.html#category_theory.applicative.Just.apply">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="s2">&quot;Applicative[typing.Callable[[a], b]]&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[b]&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="s2">"Applicative[typing.Callable[[a], b]]"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"Maybe[b]"</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">_Nothing</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">Nothing</span>
         <span class="k">return</span> <span class="n">maybe</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
@@ -301,7 +301,7 @@ document.write(`
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="s2">&quot;Applicative[typing.Callable[[a], b]]&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[b]&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="s2">"Applicative[typing.Callable[[a], b]]"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"Maybe[b]"</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">Nothing</span>
 
 
